@@ -1,0 +1,18 @@
+.banner {
+    width: fit-content;
+}
+
+nav{
+        color: black;
+        font-family: 'Dancing Script', cursive;
+        background-color: #FFD1DA;
+        font-size: 1.5rem;
+        &:hover {
+            color: #FBA1B7;
+        }
+}
+
+
+.navbar {
+    --bs-navbar-padding-y: 0;
+}
