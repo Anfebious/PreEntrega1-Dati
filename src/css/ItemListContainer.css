@@ -1,14 +1,14 @@
-.contenido{ 
+.main{
     background-color: #FBA1B7;
-    padding-left: 10px;
-    padding-top: 20px;
-    padding-bottom: 539px;
 }
 
-.parrafo{
-    font-family: 'Dancing Script', cursive;
-    &:hover{
-        opacity: 100%;
-        color:  #FFDBAA;
+.titulo{
+    font-family: 'Great Vibes', cursive;
+    justify-content: center;
+}
+
+div{
+    .card{
+        width: 18rem;
     }
 }
