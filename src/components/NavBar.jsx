@@ -1,9 +1,9 @@
-import React from "react";
+import { React } from "react";
 import "../css/NavBar.css";
 import ImagenBanner from "../Fotos/Imagen Definitiva (2).png";
 import CartWidget from "../components/CartWidget"
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-const Navbar = () => {
+const Navbar = ({cantidadCarrito}) => {
   return (    
       <>
         <div className="container banner">
@@ -25,7 +25,7 @@ const Navbar = () => {
                 <Link className="nav-link m-auto navegacion" target="" to="/category">Cursos online</Link>
                 <Link className="nav-link m-auto navegacion" target="" to="/category/tartas">Tartas</Link>
                 <Link className="nav-link m-auto navegacion" target="" to="/category/tortas">Tortas</Link>
-                <CartWidget/>
+                <CartWidget cantidadCarrito = {cantidadCarrito}/>
               </div>
             </div>
           </div>

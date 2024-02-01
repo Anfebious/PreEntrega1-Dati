@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/itemListContainer.css";
+import "../css/ItemListContainer.css";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const CursoCard = ({ card }) => {
     const ruta = "/item/" + encodeURIComponent(JSON.stringify(card))

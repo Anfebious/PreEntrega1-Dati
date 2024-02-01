@@ -1,5 +1,5 @@
 import { useEffect, React, useState } from "react";
-import "../css/itemListContainer.css";
+import "../css/ItemListContainer.css";
 import CursoCard from "./CursoCard";
 import { useParams } from "react-router-dom";
 import Galeria13 from "../Fotos/Galeria 13.jpg";
@@ -58,7 +58,6 @@ const ItemListContainer = () => {
             }catch (error) {
                 console.log("Error: ", error)
             }finally {
-                console.log(cardsFilter)
                 setLoading(false);
             }
         }
