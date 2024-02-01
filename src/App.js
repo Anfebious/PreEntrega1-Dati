@@ -10,8 +10,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   const [cantidadCarrito, setCantidadCarrito] = useState(0);
   const actualizarCarrito = (cantidad) => {
-    console.log(cantidad)
-    console.log(cantidadCarrito)
     setCantidadCarrito(cantidad + cantidadCarrito)
   }
   return (
