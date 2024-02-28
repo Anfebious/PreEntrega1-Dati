@@ -9,7 +9,7 @@ const CursoCard = ({ card }) => {
             <div className="card-body">
                 <h2 className="card-title titulo text-center">{card.titulo}</h2>
                 <p className="card-text text-center parrafo">{card.descripcion}</p>
-                <a href="#" className="btn btn-secondary">Comprar {card.precio}</a>
+                <p className="titulo text-center">Precio: ${card.precio}</p>
                 <Link className="btn btn-secondary m-2" to={ruta}>Ver detalle</Link>
             </div>
         </div>

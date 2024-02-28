@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import "../css/ItemCount.css";
-const ItemCount = ({ actualizarCarrito }) => {
+import { updateDoc, getFirestore, getDoc, doc } from "firebase/firestore";
+const ItemCount = ({ actualizarCarrito, curso }) => {
     const [count, setCount] = useState(0);
 
     const increment = () => {
@@ -15,9 +16,30 @@ const ItemCount = ({ actualizarCarrito }) => {
         }
     };
 
-    const confirmar = () => {
-        actualizarCarrito(count)
+    const confirmar = async () => {
+        const cursos = await getCarrito();   
+        const cursosAgregados = {
+            titulo: curso.titulo, 
+            precio: curso.precio, 
+            cantidad: count
+        };
+        cursos.push(JSON.stringify(cursosAgregados));
+        await updateCarrito(cursos)
+        actualizarCarrito();
     };
+
+    const updateCarrito = async (cursosNuevo) => {
+        const db = getFirestore();
+        const carrito = doc(db, "Carritos", "UMJZVFoasXrffhxBCzN1");
+        updateDoc(carrito, {cursos: cursosNuevo});
+    }
+
+    const getCarrito = async () => {
+        const db = getFirestore();
+        const carritoRef = doc(db, "Carritos", "UMJZVFoasXrffhxBCzN1");
+        const carrito = await getDoc(carritoRef);
+        return carrito.data().cursos;
+    }
 
     return (
         <>

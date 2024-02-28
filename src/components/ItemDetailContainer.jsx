@@ -11,7 +11,7 @@ const ItemDetailContainer = ({actualizarCarrito}) => {
                 <img src={card.foto} className="card-img-top rounded-5" alt="fotoTortaClasica" />
             </div>
             <p className="parrafo m-5">{card.detalle}</p>
-            <ItemCount actualizarCarrito = {actualizarCarrito}/>
+            <ItemCount curso={card} actualizarCarrito = {actualizarCarrito}/>
         </div>
     )
 }

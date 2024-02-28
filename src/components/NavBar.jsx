@@ -1,13 +1,13 @@
 import { React } from "react";
 import "../css/NavBar.css";
-import ImagenBanner from "../Fotos/Imagen Definitiva (2).png";
+// import ImagenBanner from "../public/Fotos/Imagen Definitiva (2).png";
 import CartWidget from "../components/CartWidget"
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-const Navbar = ({cantidadCarrito}) => {
+const Navbar = ({cantidadCarrito, carrito, deleteCursoFromCarrito}) => {
   return (    
       <>
         <div className="container banner">
-          <Link to="/"><img src={ImagenBanner}
+          <Link to="/"><img src="../Fotos/Imagen Definitiva (2).png"
             alt="logoPrincipal"></img>
           </Link>
         </div>
@@ -25,7 +25,7 @@ const Navbar = ({cantidadCarrito}) => {
                 <Link className="nav-link m-auto navegacion" target="" to="/category">Cursos online</Link>
                 <Link className="nav-link m-auto navegacion" target="" to="/category/tartas">Tartas</Link>
                 <Link className="nav-link m-auto navegacion" target="" to="/category/tortas">Tortas</Link>
-                <CartWidget cantidadCarrito = {cantidadCarrito}/>
+                <Link to="/checkout"><CartWidget cantidadCarrito = {cantidadCarrito}/></Link>
               </div>
             </div>
           </div>
